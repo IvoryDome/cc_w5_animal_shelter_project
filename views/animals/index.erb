@@ -1,0 +1,20 @@
+<h1>Animals</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Species</th>
+    <th></th>
+    <th>Owner</th>
+  </tr>
+  <% for animal in @animals %>
+  <tr>
+    <td><a href="/animals/<%= animal.id %"><%= animal.name %></a></td>
+    <td>|</td>
+    <td><%= animal.species %></td>
+    <td>|</td>
+    <td><%= animal.owner_id %></td>
+  </tr>
+  <% end %>
+</table>
