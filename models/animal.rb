@@ -24,7 +24,7 @@ class Animal
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
     values = [@name, @species, @adoptable, @admissions_date, @owner_id]
@@ -38,13 +38,13 @@ class Animal
     return results.map { |animals| Animal.new(animal) }
   end
 
-  def house()
+  def owner()
     owner = Owner.find(@owner_id)
     return owner
   end
 
   def self.find(id)
-    sql = "SELECT * FROM students
+    sql = "SELECT * FROM animals
     WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first
