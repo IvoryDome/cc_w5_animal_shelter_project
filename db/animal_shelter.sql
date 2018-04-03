@@ -16,7 +16,8 @@ CREATE TABLE animals
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   species VARCHAR(255),
-  adoptable BOOLEAN,
-  admissions_date DATE,
+  adoptable VARCHAR(255),
+  age VARCHAR(255),
+  admission_date VARCHAR(255),
   owner_id INT8 REFERENCES owners(id)
 );
