@@ -1,10 +1,19 @@
-<h1><%= @animal.name %> (animal)</h1>
+<h1><%= @animal.name %></h1>
 
 <p>Species: <%= @animal.species %></p>
+
+<p>Age: <%= @animal.age %></p>
+
+<p>Adoptable: <%= @animal.adoptable %></p>
+
+<p>Admission Date: <%= @animal.admission_date %></p>
+
+
 
 <h3>Owned by:</h3>
 
 
 <a href="/animals/<%= @animal.id %>/edit">Edit</a>
 <a href="/animals/<%= @animal.id %>/adopt">Assign animal to a new owner</a>
+<a href="/animals/<%= @animal.id %>/adoptability">Change adoptability status</a>
 <form action="/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
