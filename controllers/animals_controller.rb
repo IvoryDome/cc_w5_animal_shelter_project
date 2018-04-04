@@ -43,12 +43,26 @@ end
 
 get '/animals/:id/adopt' do
   @animals = Animal.all()
+  @owners = Owner.all()
   @animal = Animal.find(params['id'])
   erb(:"animals/adopt")
 end
 
-post '/animals/:id' do
+post '/animals/:id/adopt' do
   animal = Animal.new(params)
   animal.adopt()
+
   redirect to "/animals/#{params['id']}"
 end
+#
+# get '/animals/:id/adoptability' do
+#   @animals = Animal.all()
+#   @animal = Animal.find(params['id'])
+#   erb(:"animals/adopt")
+# end
+#
+# post '/animals/:id' do
+#   animal = Animal.new(params)
+#   animal.adopt()
+#   redirect to "/animals/#{params['id']}"
+# end
