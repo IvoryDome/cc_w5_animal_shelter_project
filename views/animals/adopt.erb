@@ -1,0 +1,19 @@
+<h1>Assign <%@animal.name%> to new owner</h1>
+
+<form method="POST" action="/animals/<%= @animal.id %>">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="owner_id">Select Owner:</label>
+      <select name="owner_id" id="owner-select">
+        <% @owners.each do |owner| %>
+        <option value=<%= owner.id %>><%= owner.name.capitalize %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Adopt Animal"/>
+    </div>
+
+</form>

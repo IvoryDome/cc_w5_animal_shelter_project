@@ -1,4 +1,4 @@
-<h2>Edit <%= @animal.format_name %></h2>
+<h2>Edit <%= @animal.name %></h2>
 <form method="POST" action="/animals/<%= @animal.id %>">
   <div class="form-wrapper">
 
@@ -15,7 +15,7 @@
     <div class="form-el">
       <label for="adoptable_select">Select whether animal is adoptable:</label>
       <select name="adoptable_select" id="adoptable_select">
-            <option>Yes></option>
+            <option>Yes</option>
             <option>No</option>
       </select>
     </div>
@@ -27,20 +27,11 @@
 
     <div class="form-el">
       <label for="admission_date">Admission date:</label>
-      <input type="number" name="admission_date" id="admission_date"/>
+      <input type="text" name="admission_date" id="admission_date"/>
     </div>
 
     <div class="form-el">
-      <label for="owner_select">Select Owner:</label>
-      <select name="owner_select" id="owner_select">
-        <% @owners.each do |owner| %>
-            <option value=<%= owner.id %>><%= owner.name.capitalize %></option>
-        <% end %>
-      </select>
-    </div>
-
-    <div class="form-el">
-      <input type="submit" value="Add Animal"/>
+      <input type="submit" value="Update Animal"/>
     </div>
 
   </div>

@@ -44,64 +44,65 @@ class Animal
       species,
       adoptable,
       age,
-      admission_date,
-      owner_id
+      admission_date
       ) =
       (
-        $1, $2, $3, $4, $6
+        $1, $2, $3, $4, $5
       )
-      WHERE id = $7"
-      values = [@name, @species, @adoptable, @age, @owner_id, @id]
+      WHERE id = $6"
+      values = [@name, @species, @adoptable, @age, @admission_date, @id]
       SqlRunner.run(sql, values)
     end
 
-  def self.all()
-    sql = "SELECT * FROM animals"
-    results = SqlRunner.run( sql )
-    return results.map { |animal| Animal.new(animal) }
+    def self.all()
+      sql = "SELECT * FROM animals"
+      results = SqlRunner.run( sql )
+      return results.map { |animal| Animal.new(animal) }
+    end
+
+    def owner()
+      owner = Owner.find(@owner_id)
+      return owner
+    end
+
+    def self.find(id)
+      sql = "SELECT * FROM animals
+      WHERE id = $1"
+      values = [id]
+      result = SqlRunner.run(sql, values).first
+      animal = Animal.new(result)
+      return animal
+    end
+
+    def self.delete_all()
+      sql = "DELETE FROM animals"
+      SqlRunner.run( sql )
+    end
+
+    def self.destroy(id)
+      sql = "DELETE FROM animals
+      WHERE id = $1"
+      values = [id]
+      SqlRunner.run( sql, values )
+    end
+
+    def delete()
+      sql = "DELETE FROM animals
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
+
+    def adopt
+      if @adoptable != "No"
+        sql = "INSERT INTO animals
+        (owner_id) VALUES ($1)
+        WHERE id = $2"
+        values = [@owner_id, @id]
+      end
+    end
+
+
+
+
   end
-
-  def owner()
-    owner = Owner.find(@owner_id)
-    return owner
-  end
-
-  def self.find(id)
-    sql = "SELECT * FROM animals
-    WHERE id = $1"
-    values = [id]
-    result = SqlRunner.run(sql, values).first
-    animal = Animal.new(result)
-    return animal
-  end
-
-  def self.delete_all()
-    sql = "DELETE FROM animals"
-    SqlRunner.run( sql )
-  end
-
-  def self.destroy(id)
-    sql = "DELETE FROM animals
-    WHERE id = $1"
-    values = [id]
-    SqlRunner.run( sql, values )
-  end
-
-  def delete()
-    sql = "DELETE FROM animals
-    WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
-  def assign_owner
-    sql = "INSERT INTO animals
-    (owner_id) VALUES ($1)
-    WHERE id = $2"
-    values = [@owner_id, @id]
-  end
-
-
-
-
-end

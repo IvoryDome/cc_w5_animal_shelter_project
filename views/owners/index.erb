@@ -3,10 +3,12 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Pets</th>
   </tr>
   <% for owner in @owners %>
   <tr>
     <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
+    <td><%= owner.animals %></td>
   </tr>
   <% end %>
 </table>

@@ -3,7 +3,7 @@ require('sinatra/contrib/all')
 require_relative('../models/animal')
 require_relative('../models/owner')
 
-get '/owners/' do
+get '/owners' do
   @owners = Owner.all()
   erb(:"owners/index")
 end
@@ -15,7 +15,7 @@ end
 
 post '/owners' do
   Owner.new(params).save()
-  redirect to '/owners'
+  redirect to '/owners/'
 end
 
 get '/owners/:id' do

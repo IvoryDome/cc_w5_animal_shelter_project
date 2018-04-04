@@ -6,7 +6,7 @@
     <th></th>
     <th>Species</th>
     <th></th>
-    <th>Owner</th>
+    <th>Admission Date</th>
   </tr>
   <% for animal in @animals %>
   <tr>
@@ -14,7 +14,7 @@
     <td>|</td>
     <td><%= animal.species %></td>
     <td>|</td>
-    <td><%= animal.owner_id %></td>
+    <td><%= animal.admission_date %></td>
   </tr>
   <% end %>
 </table>

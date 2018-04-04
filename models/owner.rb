@@ -71,4 +71,16 @@ class Owner
       SqlRunner.run( sql, values )
     end
 
+
+    def animals()
+      sql = "SELECT animals.* FROM animals
+      WHERE owner_id = $1"
+      values = [@id]
+      animals_hash = SqlRunner.run( sql, values )
+      return animals_hash.map {|animal| Animal.new(animal)}
+    end
+
+
+
+
   end

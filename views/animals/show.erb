@@ -4,8 +4,7 @@
 
 <h3>Owned by:</h3>
 
-<!-- <ul>
-  <% @animal.owner.each do |owner| %>
-  <li><%= owner.name %></li>
-  <% end %>
-</ul> -->
+
+<a href="/animals/<%= @animal.id %>/edit">Edit</a>
+<a href="/animals/<%= @animal.id %>/adopt">Assign animal to a new owner</a>
+<form action="/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
