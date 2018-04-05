@@ -12,7 +12,7 @@ class Animal
     @adoptable = options['adoptable']
     @age = options['age']
     @admission_date = options['admission_date']
-    @owner_id = options['owner_id']
+    @owner_id = options['owner_id'] if options['owner_id']
   end
 
 
