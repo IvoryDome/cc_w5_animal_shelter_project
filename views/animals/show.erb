@@ -1,12 +1,12 @@
 <h1><%= @animal.name %></h1>
 
-<p>Species: <%= @animal.species %></p>
+<p id="animal_show">Species: <%= @animal.species %></p>
 
-<p>Age: <%= @animal.age %></p>
+<p id="animal_show">Age: <%= @animal.age %></p>
 
-<p>Adoptable: <%= @animal.adoptable %></p>
+<p id="animal_show">Adoptable: <%= @animal.adoptable %></p>
 
-<p>Admission Date: <%= @animal.admission_date %></p>
+<p id="animal_show">Admission Date: <%= @animal.admission_date %></p>
 
 <h3>Owned by: <% if @animal.owner_id == nil %>
               <%= "Scottish Animal Shelter" %>
@@ -17,5 +17,4 @@
 
 <a href="/animals/<%= @animal.id %>/edit">Edit</a>
 <a href="/animals/<%= @animal.id %>/adopt">Assign animal to a new owner</a>
-<a href="/animals/<%= @animal.id %>/adoptability">Change adoptability status</a>
-<form action="/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<form action="/animals/<%= @animal.id %>/delete" method="POST"><input class="btn"type="submit" value="Delete"></form>

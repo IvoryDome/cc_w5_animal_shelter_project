@@ -1,0 +1,17 @@
+input[type="submit"] {
+  font-family: 'Montserrat', cursive;
+}
+
+select {
+ width: 100px;
+ font-family: 'Montserrat', serif;
+}
+
+
+.btn {
+  color: green;
+}
+
+.btn:active {
+  transform: translateY(4px);
+}

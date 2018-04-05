@@ -1,4 +1,4 @@
-<h1>Assign <%= @animal.name%> to new owner</h1>
+<h1 id="subtitle">Assign <%= @animal.name%> to a new owner</h1>
 
 <form method="POST" action="/animals/<%= @animal.id %>/adopt">
   <div class="form-wrapper">
@@ -12,7 +12,7 @@
       </select>
     </div>
 
-    <div class="form-el">
+    <div class="btn">
       <input type="submit" value="Adopt Animal"/>
     </div>
 

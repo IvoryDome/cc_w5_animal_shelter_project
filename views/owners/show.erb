@@ -1,3 +1,4 @@
 <h1><%= @owner.name %> (owner)</h1>
 
-<p>Name: <%= @owner.name %></p>
+<p id="owner_show">Name: <%= @owner.name %></p>
+<form action="/owners/<%= @owner.id %>/delete" method="POST"><input class="btn" type="submit" value="Delete"></form>

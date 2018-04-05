@@ -1,0 +1,22 @@
+td, th {
+  text-align: left;
+}
+
+td {
+  padding: 10px 20px 0px 0px;
+  font-family: 'Montserrat', cursive;
+  color: #f4b342 ;
+  font-weight: bold;
+}
+
+th {
+  font-family: 'Montserrat', cursive;
+  color: #f4b342 ;
+  font-weight: bold;
+  padding: 0px 20px 10px 0px;
+  border-bottom: 1px solid green;
+}
+
+table {
+  border-collapse: collapse;
+}

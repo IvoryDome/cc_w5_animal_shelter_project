@@ -5,40 +5,62 @@ body {
   background-position: left top;
   padding: 10px;
   font-family: 'Montserrat', cursive;
-  color: green ;
+  color: #f4b342 ;
+  flex-wrap: wrap;
 }
+
+
 
 h1 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', cursive;
+  color: #022cff ;
+}
+
+p {
+  font-family: 'Montserrat', cursive;
+  color: #022cff ;
+}
+
+#animal_show{
+  font-family: 'Montserrat', cursive;
+  color: #f4b342 ;
+}
+
+#owner_show{
+  font-family: 'Montserrat', cursive;
+  color: #f4b342 ;
+}
+
+#subtitle{
+  font-family: 'Montserrat', cursive;
+  color: #f4b342 ;
+}
+
+.nav {
+  display: flex;
   justify-content: center;
 }
-
-td, th {
-  text-align: left;
-}
-
-td {
-  padding: 10px 20px 0px 0px;
-}
-
-th {
-  padding: 0px 20px 10px 0px;
-  border-bottom: 1px solid green;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-/* #menu {
-display: flex;
-flex-direction: row;
-justify-content: center;
-} */
 
 .menu-item {
   display: flex;
   justify-content: center;
-  font-size: 20px;
+  font-size: 25px;
   display: inline-block;
   flex-grow: 2;
+  margin: 10px;
+  padding: 10px;
+  border: 5px double #1f9b3e;
+}
+
+
+a {
+  font-weight: bold;
+  color: #f4b342;
+}
+
+a:hover {
+  font-weight: bold;
+  color: red;
 }

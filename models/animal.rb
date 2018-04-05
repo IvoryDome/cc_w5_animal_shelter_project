@@ -94,7 +94,7 @@ class Animal
     end
 
     def adopt()
-      if @adoptable != "No"
+      if @adoptable == "Yes"
         sql = "UPDATE animals
         SET (owner_id) = ($1)
         WHERE id = $2"
